@@ -1,0 +1,25 @@
+class Vehicle:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def display_info(self):
+        print(f"{self.year} {self.make} {self.model}")
+
+class Bus(Vehicle):
+    def __init__(self, make, model, year, passengers):
+        # Call the constructor of the parent class (Vehicle) using super()
+        super().__init__(make, model, year)
+        self.passengers = passengers
+
+    def display_info(self):
+        # Override the display_info method from the parent class
+        print(f"{self.year} {self.make} {self.model} - Passengers: {self.passengers}")
+
+# Example usage:
+vehicle = Vehicle("Toyota", "Camry", 2022)
+vehicle.display_info()
+
+bus = Bus("Mercedes", "Sprinter", 2023, 20)
+bus.display_info()
